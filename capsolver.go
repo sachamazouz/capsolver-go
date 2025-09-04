@@ -7,7 +7,6 @@ import (
 )
 
 func (c CapSolver) Solve(task map[string]any) (*capSolverResponse, error) {
-	fmt.Println(c.getAppId())
 	capRes, err := request(CREATE_TASK_URI, &capSolverRequest{Task: &task, ClientKey: c.getApiKey(), AppId: c.getAppId()})
 	if err != nil {
 		return nil, err
