@@ -2,6 +2,7 @@ package capsolver_go
 
 type CapSolver struct {
 	ApiKey string
+	AppId string
 }
 
 type solution struct {
@@ -17,7 +18,7 @@ type solution struct {
 	CaptchaId          string    `json:"captcha-id,omitempty"`
 	CaptchaOutput      string    `json:"captcha-output,omitempty"`
 	GenTime            string    `json:"gen_time,omitempty"`
-	LotNumber          string    `json:"lot_number,omitempty"`
+	LogNumber          string    `json:"log_number,omitempty"`
 	PassToken          string    `json:"pass_token,omitempty"`
 	RiskType           string    `json:"risk_Type,omitempty"`
 	Token              string    `json:"token,omitempty"`
@@ -38,6 +39,7 @@ type capSolverResponse struct {
 
 type capSolverRequest struct {
 	ClientKey string          `json:"ClientKey"`
+	AppId     string          `json:"appId,omitempty"`
 	Task      *map[string]any `json:"task,omitempty"`
 	TaskId    string          `json:"taskId,omitempty"`
 }

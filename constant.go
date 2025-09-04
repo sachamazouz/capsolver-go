@@ -5,6 +5,7 @@ import "os"
 var (
 	ApiKey  = os.Getenv("CAPSOLVER_API_KEY")
 	ApiHost = os.Getenv("CAPSOLVER_API_HOST")
+	AppId   = os.Getenv("CAPSOLVER_APPID")
 )
 
 const (

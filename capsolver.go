@@ -2,12 +2,12 @@ package capsolver_go
 
 import (
 	"errors"
+	"fmt"
 	"time"
 )
 
 func (c CapSolver) Solve(task map[string]any) (*capSolverResponse, error) {
-	//
-	capRes, err := request(CREATE_TASK_URI, &capSolverRequest{Task: &task, ClientKey: c.getApiKey()})
+	capRes, err := request(CREATE_TASK_URI, &capSolverRequest{Task: &task, ClientKey: c.getApiKey(), AppId: c.getAppId()})
 	if err != nil {
 		return nil, err
 	}
@@ -48,3 +48,12 @@ func (c *CapSolver) getApiKey() string {
 	}
 	return ApiKey
 }
+
+func (c *CapSolver) getAppId() string {
+	if c.AppId != "" {
+		fmt.Println(c.AppId)
+		return c.AppId
+	}
+	return AppId
+}
+
